@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="stylesheet" href="CSS/estilos.css">
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+ 
+  <script src="https://kit.fontawesome.com/6131ecdde6.js" crossorigin="anonymous"></script>
+  <title>Taller 0 Maquetación Responsive</title>
+</head>
+<body background="IMG/fondo3.jpg">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <nav>
+    <div class="logo">
+      <img src="IMG/logo.webp">
+    </div>
+    <div class="menu">
+      <a href="index.html" class="item">Inicio</a>
+      <a href="views/experiencia.html" class="item">experiencia</a>
+      <a href="views/opiniones.html" class="item">Opiniones</a>
+      <a href="" class="item"><i class="fa-solid fa-user"></i> Iniciar Sesión</a>
+    </div>
+  </nav>
+
+  <section id="features">
+    <h2 class="features-title">Distribuidores de tecnología de la mejor calidad</h2>
+    <div class="features-description">
+      <div class="feature feature-blue">
+        <i class="fa-solid fa-bell-concierge"></i>
+        <p>Logitech</p>
+      </div>
+      <div class="feature feature-black">
+        <i class="fa-solid fa-bed"></i>
+        <p>Genius</p>
+      </div>
+      <div class="feature feature-blue">
+        <i class="fa-solid fa-wifi"></i>
+        <p>Intel</p>
+      </div>
+      <div class="feature feature-black">
+        <i class="fa-solid fa-dumbbell"></i>
+        <p>Tp-Link</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="carousel" class="swiper-container">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">
+        <img src="IMG/computador1.jpg" alt="Slide 1">
+      </div>
+      <div class="swiper-slide">
+        <img src="IMG/computador2.jpg" alt="Slide 2">
+      </div>
+      <div class="swiper-slide">
+        <img src="IMG/computador3.jpg" alt="Slide 3">
+      </div>
+    </div>
+    <div class="swiper-pagination"></div>
+  </section>
+
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <script>
+    var swiper = new Swiper('#carousel', {
+      loop: true,
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true
+      },
+    });
+
+  </script>
+
+</body>
+</html>

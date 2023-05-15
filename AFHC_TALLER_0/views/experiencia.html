@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Experiencia en productos tecnológicos</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f9f9f9;
+    }
+
+    #header {
+      background-color: #333;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 28px;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+
+    #content {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    #content p {
+      font-size: 18px;
+    }
+
+    #images {
+      display: flex;
+      justify-content: center;
+      margin-top: 20px;
+    }
+
+    #images img {
+      width: 200px;
+      height: 200px;
+      margin: 0 10px;
+    }
+
+    #map {
+      height: 300px;
+      width: 100%;
+      margin-top: 20px;
+    }
+  </style>
+  <script src="https://maps.googleapis.com/maps/api/js?key=TU_API_KEY&callback=initMap" async defer></script>
+  <script>
+    function initMap() {
+      var address = "Carrera 10 numero 21 centro, Bogotá, Centro Comercial 21"; // Dirección del centro comercial
+
+      var map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 15
+      });
+
+      var geocoder = new google.maps.Geocoder();
+      geocoder.geocode({ address: address }, function(results, status) {
+        if (status === google.maps.GeocoderStatus.OK) {
+          map.setCenter(results[0].geometry.location);
+
+          var marker = new google.maps.Marker({
+            map: map,
+            position: results[0].geometry.location,
+            title: address
+          });
+        }
+      });
+    }
+  </script>
+</head>
+<body>
+  <div id="header">
+    <h1>Experiencia en productos tecnológicos</h1>
+  </div>
+  <div id="content">
+    <p>Llevamos más de 15 años en la venta y servicio de productos tecnológicos.</p>
+    <div id="images">
+      <img src="../IMG/venta.jpg" alt="Imagen 1">
+      <img src="../IMG/centro.jpg" alt="Imagen 2">
+      <img src="../IMG/servicio.webp" alt="Imagen 3">
+    </div>
+  </div>
+  <div id="map"></div>
+</body>
+</html>
